@@ -38,7 +38,7 @@ It automatically generates a professional **Setup Installer** powered by NSIS, c
 
 | Feature | Free Version | PRO Version |
 | :--- | :---: | :---: |
-| **Max Builds** | 2 Applications | **Unlimited** |
+| **Max Builds** | 1 Application | **Unlimited** |
 | **Setup Installer** | Included | Included |
 | **Custom Icons** | Supported | Supported |
 | **White-Labeling** | Limited | **Full Control** |
