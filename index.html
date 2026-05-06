@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web2App Converter | Premium Desktop Apps</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#3b82f6',
+                        dark: '#0a0a0f',
+                        card: 'rgba(20, 20, 30, 0.6)',
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-reverse': 'float 5s ease-in-out infinite reverse',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Utilities -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent;
+            }
+            .glass-card {
+                @apply bg-card border border-white/10 backdrop-blur-xl rounded-2xl shadow-2xl;
+            }
+            .btn {
+                @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+            }
+            .btn-primary {
+                @apply bg-gradient-to-br from-green-500 to-green-700 text-white shadow-[0_4px_15px_rgba(34,197,94,0.3)] hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(34,197,94,0.4)];
+            }
+            .btn-secondary {
+                @apply bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-100 font-sans overflow-x-hidden w-full max-w-full antialiased selection:bg-primary selection:text-black">
+
+    <!-- Background Glows -->
+    <div class="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary/20 blur-[100px] rounded-full -top-[50px] -left-[50px] max-w-full -z-10"></div>
+    <div class="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-secondary/20 blur-[100px] rounded-full top-1/4 -right-[50px] max-w-full -z-10"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="font-display font-black text-2xl tracking-tight">
+                <i class="fa-solid fa-cube text-primary mr-2"></i>Web2App<span class="text-primary">PRO</span>
+            </div>
+            <ul class="hidden md:flex gap-8 font-semibold text-slate-400">
+                <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                <li><a href="#how-it-works" class="hover:text-white transition-colors">How it Works</a></li>
+                <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+            </ul>
+            <a href="#pricing" class="btn btn-primary hidden sm:flex px-5 py-2 text-sm">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="w-full lg:flex-1 text-center lg:text-left">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs sm:text-sm mb-6">
+                🚀 Version 1.0 is Now Live!
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 break-words">
+                Turn Any Website Into a <br class="hidden sm:block"><span class="text-gradient">Premium App</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-400 mb-10 max-w-2xl mx-auto lg:mx-0">
+                No coding required. Package your website or CRM into a highly professional, white-labeled Windows executable in seconds. Complete with custom branding and automated setup files.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+                <a href="#pricing" class="btn btn-primary w-full sm:w-auto text-lg px-8 py-4">
+                    <i class="fa-solid fa-bolt"></i> Get PRO Version
+                </a>
+                <a href="#download" class="btn btn-secondary w-full sm:w-auto text-lg px-8 py-4">
+                    <i class="fa-brands fa-windows"></i> Download Free Trial
+                </a>
+            </div>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-slate-500 text-xl sm:text-2xl mt-8">
+                <span class="text-sm font-semibold uppercase tracking-wider mr-2">Powered by</span>
+                <i class="fa-brands fa-python hover:text-white transition-colors"></i>
+                <i class="fa-brands fa-node-js hover:text-green-500 transition-colors"></i>
+                <i class="fa-brands fa-html5 hover:text-orange-500 transition-colors"></i>
+            </div>
+        </div>
+
+        <!-- Glass Mockup -->
+        <div class="w-full lg:flex-1 max-w-lg mx-auto relative perspective-[1000px] mt-10 lg:mt-0">
+            <div class="glass-card h-[280px] sm:h-[400px] flex flex-col overflow-hidden transform lg:-rotate-y-12 lg:rotate-x-6 hover:rotate-0 transition-transform duration-500 relative z-10">
+                <div class="bg-black/30 p-4 flex items-center gap-4 border-b border-white/10">
+                    <div class="flex gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    </div>
+                    <div class="bg-white/10 px-4 py-1.5 rounded-full text-xs text-slate-400 flex-1 text-center font-mono truncate">
+                        https://your-website.com
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col items-center justify-center gap-6 p-8 relative">
+                    <div class="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+                    <h3 class="font-display text-xl font-bold text-center">Compiling Setup.exe...</h3>
+                </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="hidden sm:flex absolute -top-8 -right-8 glass-card px-5 py-3 items-center gap-3 font-semibold text-primary animate-float z-20">
+                <i class="fa-solid fa-check-circle"></i> Branding Applied
+            </div>
+            <div class="hidden sm:flex absolute -bottom-8 -left-8 glass-card px-5 py-3 items-center gap-3 font-semibold text-secondary animate-float-reverse z-20">
+                <i class="fa-solid fa-shield-halved"></i> Standalone .EXE
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative w-full">
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 leading-tight">Everything you need to ship <span class="text-gradient">faster</span></h2>
+            <p class="text-base sm:text-lg text-slate-400">Built for developers, agencies, and businesses who want to deliver native experiences without the overhead.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Feature 1 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">1-Click Compilation</h3>
+                <p class="text-slate-400 leading-relaxed">Simply enter your URL, upload your icon, and watch as Web2App generates a complete setup installer in seconds.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-paint-roller"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">White-Label Branding</h3>
+                <p class="text-slate-400 leading-relaxed">Fully customize the installer's sidebar and header images. The final product looks like you spent weeks developing it.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">RTL & Bilingual</h3>
+                <p class="text-slate-400 leading-relaxed">Native support for English and Arabic, including full Right-To-Left (RTL) interface adjustments for international audiences.</p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Smart Theming</h3>
+                <p class="text-slate-400 leading-relaxed">Built-in light and dark modes that dynamically adjust to your system preferences for maximum visual comfort.</p>
+            </div>
+            <!-- Feature 5 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Native Performance</h3>
+                <p class="text-slate-400 leading-relaxed">Powered by highly optimized Electron engines, delivering ultra-fast browsing and minimal RAM usage.</p>
+            </div>
+            <!-- Feature 6 -->
+            <div class="glass-card p-8 group hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-3">Licensing Engine</h3>
+                <p class="text-slate-400 leading-relaxed">Distribute your apps confidently. Includes built-in license checking mechanisms for trial limits and PRO upgrades.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black mb-4">Simple, transparent <span class="text-gradient">pricing</span></h2>
+            <p class="text-base sm:text-lg text-slate-400">Choose the plan that fits your needs.</p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8">
+            <!-- Free Plan -->
+            <div class="glass-card p-8 sm:p-10 w-full max-w-md flex flex-col">
+                <h3 class="font-display text-2xl font-bold mb-2">Free Trial</h3>
+                <div class="font-display text-5xl font-black mb-6">$0<span class="text-lg text-slate-400 font-normal">/forever</span></div>
+                <p class="text-slate-400 mb-8 border-b border-white/10 pb-8">Perfect for testing the waters and seeing the magic happen.</p>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> 2 Application Builds</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Standard Installer</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Basic Icon Support</li>
+                    <li class="flex items-center gap-3 text-slate-500 line-through"><i class="fa-solid fa-xmark text-red-500"></i> Unlimited Builds</li>
+                    <li class="flex items-center gap-3 text-slate-500 line-through"><i class="fa-solid fa-xmark text-red-500"></i> White-Label Customization</li>
+                </ul>
+                <a href="#download" class="btn btn-secondary w-full">Download Free</a>
+            </div>
+            
+            <!-- PRO Plan -->
+            <div class="glass-card p-8 sm:p-10 w-full max-w-md flex flex-col relative border-primary bg-black/40 shadow-[0_0_40px_rgba(74,222,128,0.15)] transform md:-translate-y-4">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black font-bold uppercase tracking-wider text-xs px-4 py-1 rounded-full">Most Popular</div>
+                <h3 class="font-display text-2xl font-bold mb-2">PRO License</h3>
+                <div class="font-display text-5xl font-black mb-6">$49<span class="text-lg text-slate-400 font-normal">/lifetime</span></div>
+                <p class="text-slate-400 mb-8 border-b border-white/10 pb-8">For professionals and agencies building real desktop apps.</p>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> <span class="font-bold text-white">Unlimited</span> Application Builds</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Advanced Installer Customization</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> White-Label Branding Setup</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Access to Source Code</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> 24/7 Priority Support</li>
+                </ul>
+                <a href="https://wa.me/213549523594" target="_blank" class="btn btn-primary w-full">Purchase PRO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 border-t border-white/10 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="font-display font-black text-2xl tracking-tight text-center md:text-left">
+                    <i class="fa-solid fa-cube text-primary mr-2"></i>Web2App<span class="text-primary">PRO</span>
+                    <p class="text-sm font-sans font-normal text-slate-400 mt-2">The fastest way to bring web applications to the desktop.</p>
+                </div>
+                <a href="https://wa.me/213549523594" target="_blank" class="text-slate-300 hover:text-primary transition-colors flex items-center gap-2 text-lg font-semibold">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Contact Developer
+                </a>
+            </div>
+            <div class="text-center text-sm text-slate-500 border-t border-white/10 pt-8">
+                &copy; 2026 Hakim BOUZOURDAZ. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Delete old custom files since we use Tailwind -->
+    <script>
+        // Navbar scroll logic
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body>
+</html>
